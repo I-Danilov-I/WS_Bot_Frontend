@@ -1,13 +1,7 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
+using WhiteoutSurvival_Bot;
+
 
 namespace WS_Bot_Frontend
 {
@@ -16,9 +10,24 @@ namespace WS_Bot_Frontend
     /// </summary>
     public partial class MainWindow : Window
     {
+        public GameBot? gameBot;
+
         public MainWindow()
         {
             InitializeComponent();
+            Initialisiere_Backend init = new Initialisiere_Backend();
+            ServiceProvider gameBot = init.Init();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ( gameBot != null)
+            {
+                string a = gameBot.GetConfiguration().BaseDirectory;
+                gameBot.GetAdbControl().StartADBConnection();
+                MessageBox.Show(a);                
+            }
         }
     }
 }
