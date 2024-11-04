@@ -19,97 +19,117 @@ namespace WS_Bot_Frontend
 
         public async Task Run()
         {
+
             while (true)
             {
-                    await AppendTextLikeTypewriter("Truppen werden geheilt...");
-                    botControl.Stability.CheckStability();
-                    botControl.TruppenHeilen.Heilen();
-                    
-                    await AppendTextLikeTypewriter("Lager ausgauer wird abgeholt...");
-                    botControl.LagerOnlineBelohnung.AusdauerAbholen();
-                    botControl.Stability.CheckStability();
-              
-                    // Lager belohnung Geschenk
-                    botControl.LagerOnlineBelohnung.GeschnekAbholen();
-                    botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Truppen werden geheilt...");
+                botControl.Stability.CheckStability();
+                botControl.TruppenHeilen.Heilen();
+                await AppendTextLikeTypewriter("Truppenheilung abgeschlossen");
 
-                    // Geheimdienst
-                    botControl.Stability.CheckStability();
-                    botControl.Geheimdienst.StartProcess();
+                await AppendTextLikeTypewriter("Lager Ausdauer wird abgeholt...");
+                botControl.LagerOnlineBelohnung.AusdauerAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Lager Ausdauer erfolgreich abgeholt");
 
-                    // Allianz Kisten
-                    botControl.Stability.CheckStability();
-                    botControl.Allianz.KistenAbholen();
-         
-                    // Allianz Technologie BEitrag
-                    botControl.Stability.CheckStability();
-                    botControl.Allianz.TechnologieBeitrag(5);
-                    botControl.Stability.CheckStability();
-             
-                    // Allianz Hilfe geben
-                    botControl.Allianz.Hilfe();
-                    botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Lager Geschenk wird abgeholt...");
+                botControl.LagerOnlineBelohnung.GeschnekAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Lager Geschenk erfolgreich abgeholt");
 
-                    // Allianz Autobeitritt 
-                    botControl.Allianz.AutobeitritAktivieren();
-                    botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Geheimdienst wird ausgeführt...");
+                botControl.Stability.CheckStability();
+                botControl.Geheimdienst.StartProcess();
+                await AppendTextLikeTypewriter("Geheimdienst erfolgreich abgeschlossen");
 
-                    // Arena
-                    botControl.Arena.GoToArena();
-                    botControl.Stability.CheckStability();             
+                await AppendTextLikeTypewriter("Allianz Kisten werden abgeholt...");
+                botControl.Allianz.KistenAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Allianz Kisten erfolgreich abgeholt");
 
-                    // Lebensbaum       
-                    botControl.LebensBaum.BaumBelohnungAbholen();
-                    botControl.Stability.CheckStability();
-      
-                    // LAebensbaun von Freunden       
-                    botControl.LebensBaum.EssensVonFreundenAbholen();
-                    botControl.Stability.CheckStability();
-       
-                    // Truppen Training          
-                    botControl.TruppenTraining.TrainiereLatenzTreger(500);
-                    botControl.Stability.CheckStability();  
-                    botControl.TruppenTraining.TrainiereInfaterie(500);
-                    botControl.Stability.CheckStability();
-                    botControl.TruppenTraining.TrainiereSniper(500);
-                    botControl.Stability.CheckStability();                
+                await AppendTextLikeTypewriter("Allianz Technologie Beitrag...");
+                botControl.Allianz.TechnologieBeitrag(5);
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Allianz Technologie Beitrag erfolgreich abgeschlossen");
 
-                    // Erkundung Abholen und Kampf         
-                    botControl.Erkundung.StartProcess();
-                    botControl.Stability.CheckStability();        
+                await AppendTextLikeTypewriter("Allianz Hilfe wird gegeben...");
+                botControl.Allianz.Hilfe();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Allianz Hilfe erfolgreich gegeben");
 
-                    // VIp Kiste abholen              
-                    botControl.VIP.KistenAbholen();
-                    botControl.Stability.CheckStability();
-                 
-                    // Eilauftrag         
-                    botControl.GuvenourBefehl.EilauftragAbholen();
-                    botControl.Stability.CheckStability();            
+                await AppendTextLikeTypewriter("Allianz Autobeitritt wird aktiviert...");
+                botControl.Allianz.AutobeitritAktivieren();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Allianz Autobeitritt erfolgreich aktiviert");
 
-                    // Fetlichkeitsauftrag             
-                    botControl.GuvenourBefehl.FestlichkeitenAbholen();
-                    botControl.Stability.CheckStability();
-               
-                    // HElden Rekurt         
-                    botControl.Helden.HeldenRekrutieren();
-                    botControl.Stability.CheckStability();
-              
-                    // PolarTerror
-                    //stopwatch.Restart();
-                    //botControl.Jagt.PolarTerrorStarten(6);
-                    //botControl.Stability.CheckStability();
-                    //Time();
+                await AppendTextLikeTypewriter("Arena wird betreten...");
+                botControl.Arena.GoToArena();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Arena erfolgreich betreten");
 
-                    // BEtienjagt
-                    botControl.Jagt.BestienJagtStarten(25);
-                    botControl.Stability.CheckStability();
-             
-                    // Arena
-                    botControl.Arena.GoToArena();
-                    botControl.Stability.CheckStability();
-                
+                await AppendTextLikeTypewriter("Lebensbaum Belohnung wird abgeholt...");
+                botControl.LebensBaum.BaumBelohnungAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Lebensbaum Belohnung erfolgreich abgeholt");
+
+                await AppendTextLikeTypewriter("Lebensbaum von Freunden wird abgeholt...");
+                botControl.LebensBaum.EssensVonFreundenAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Lebensbaum von Freunden erfolgreich abgeholt");
+
+                await AppendTextLikeTypewriter("Truppen Training wird durchgeführt...");
+                await AppendTextLikeTypewriter("Latten-Träger werden ausgebildet...");
+                botControl.TruppenTraining.TrainiereLatenzTreger(500);
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Latten-Träger erfolgreich ausgebildet");
+
+                await AppendTextLikeTypewriter("Infanterie wird ausgebildet...");
+                botControl.TruppenTraining.TrainiereInfaterie(500);
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Infanterie erfolgreich ausgebildet");
+
+                await AppendTextLikeTypewriter("Scharfschützen werden ausgebildet...");
+                botControl.TruppenTraining.TrainiereSniper(500);
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Scharfschützen erfolgreich ausgebildet");
+                await AppendTextLikeTypewriter("Truppen Training erfolgreich abgeschlossen");
+
+
+                await AppendTextLikeTypewriter("Erkundung wird durchgeführt...");
+                botControl.Erkundung.StartProcess();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Erkundung erfolgreich abgeschlossen");
+
+                await AppendTextLikeTypewriter("VIP Kiste wird abgeholt...");
+                botControl.VIP.KistenAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("VIP Kiste erfolgreich abgeholt");
+
+                await AppendTextLikeTypewriter("Eilauftrag wird abgeholt...");
+                botControl.GuvenourBefehl.EilauftragAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Eilauftrag erfolgreich abgeholt");
+
+                await AppendTextLikeTypewriter("Festlichkeiten werden abgeholt...");
+                botControl.GuvenourBefehl.FestlichkeitenAbholen();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Festlichkeiten erfolgreich abgeholt");
+
+                await AppendTextLikeTypewriter("Helden werden rekrutiert...");
+                botControl.Helden.HeldenRekrutieren();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Helden erfolgreich rekrutiert");
+
+                await AppendTextLikeTypewriter("Bestienjagd wird gestartet...");
+                botControl.Jagt.BestienJagtStarten(25);
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Bestienjagd erfolgreich abgeschlossen");
+
+                await AppendTextLikeTypewriter("Arena wird erneut betreten...");
+                botControl.Arena.GoToArena();
+                botControl.Stability.CheckStability();
+                await AppendTextLikeTypewriter("Arena erfolgreich erneut betreten");
             }
-
         }
 
 
