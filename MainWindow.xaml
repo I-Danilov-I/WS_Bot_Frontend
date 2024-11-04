@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WS_Bot_Frontend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <Button Content="Start" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Height="39" Width="200" Click="Button_Click"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" Height="40" Width="200" Click="Button_Click"/>
 
 
-        <RichTextBox Name="logRichTextBox" Margin="10,10,400,267" Background="Black" Foreground="LimeGreen" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextChanged="logRichTextBox_TextChanged">
+        <RichTextBox Name="logRichTextBox" Margin="20,20,400,300" Background="Black" Foreground="LimeGreen" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextChanged="logRichTextBox_TextChanged" HorizontalAlignment="Left">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
