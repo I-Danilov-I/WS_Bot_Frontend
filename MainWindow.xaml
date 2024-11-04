@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WS_Bot_Frontend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="Whiteout Survival Bot by_DaniFaust " Height="500" Width="800">
     <Grid>
         <Button Content="Start" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" Height="40" Width="200" Click="Button_Click"/>
 
