@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Whiteout Survival Bot by_DaniFaust " Height="500" Width="800">
     <Grid>
+        <!-- MediaElement im Hintergrund -->
+        <MediaElement x:Name="mediaPlayer"
+                      Source="C:\Users\Anatolius\Source\Repos\I-Danilov-I\WS_Bot_Frontend\Img\a.mp4"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop"
+                      Stretch="Fill"
+                      MediaEnded="MediaPlayer_MediaEnded" />
+
+
         <Button Content="Start" HorizontalAlignment="Left" Margin="20,0,0,20" VerticalAlignment="Bottom" Height="40" Width="200" Click="Button_Click"/>
 
 

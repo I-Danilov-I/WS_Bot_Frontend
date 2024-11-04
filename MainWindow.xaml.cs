@@ -12,9 +12,21 @@ namespace WS_Bot_Frontend
        
         public MainWindow()
         {
+
             InitializeComponent();
+
+            // Video abspielen
+            mediaPlayer.Play();
             botControl = WhiteoutSurvival_Bot.Program.botControl;
         }
+
+        private void MediaPlayer_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+            //mediaPlayer.Position = TimeSpan.Zero; // Setzt die Position zurück
+            mediaPlayer.Play(); // Spielt das Video erneut ab
+        }
+
 
 
         public async Task Run()
