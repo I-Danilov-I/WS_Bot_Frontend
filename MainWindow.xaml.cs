@@ -10,24 +10,23 @@ namespace WS_Bot_Frontend
     /// </summary>
     public partial class MainWindow : Window
     {
-        public GameBot? gameBot;
+        
 
         public MainWindow()
         {
             InitializeComponent();
-            Initialisiere_Backend init = new Initialisiere_Backend();
-            ServiceProvider gameBot = init.Init();
-
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if ( gameBot != null)
-            {
-                string a = gameBot.GetConfiguration().BaseDirectory;
-                gameBot.GetAdbControl().StartADBConnection();
-                MessageBox.Show(a);                
-            }
+            await Task.Run(() => WhiteoutSurvival_Bot.Program.Main());
+        }
+
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
         }
     }
 }
