@@ -140,6 +140,7 @@ namespace WS_Bot_Frontend
                 await Dispatcher.InvokeAsync(() =>
                 {
                     Run run = new Run(c.ToString()) { Foreground = System.Windows.Media.Brushes.LimeGreen };
+                   
                     // Füge das Zeichen zum letzten Paragraph hinzu
                     Paragraph paragraph = logRichTextBox.Document.Blocks.LastBlock as Paragraph ?? new Paragraph();
                     if (paragraph.Parent == null)
