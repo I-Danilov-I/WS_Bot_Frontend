@@ -10,18 +10,22 @@ namespace WS_Bot_Frontend
         public MainWindow()
         {
             InitializeComponent();
+            var bot = WhiteoutSurvival_Bot.Program.botControl;
+            var a = bot.Logging.OnLogMessage;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             // Beispieltext für den Matrix-Stil Effekt
             string textToDisplay = "Hallo Welt! Dies ist eine Matrix-inspirierte Nachricht.\n";
+
             await AppendTextLikeTypewriter(textToDisplay);
+
             // Sicherstellen, dass die `Program.Main()` Methode geeignet für asynchrone Aufrufe gestaltet ist
             await Task.Run(() => WhiteoutSurvival_Bot.Program.Main());
         }
 
-        private async Task AppendTextLikeTypewriter(string text)
+        public async Task AppendTextLikeTypewriter(string text)
         {
             foreach (char c in text)
             {
